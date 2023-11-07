@@ -2,8 +2,8 @@
 
 ### 1. Perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
 
-Stateless: Ga ada state, hanya menampilkan suatu tampilan kepada user
-Stateful: Ada state, terdapat data yang diatur dalam component
+- Stateless: Ga ada state, hanya menampilkan suatu tampilan kepada user
+- Stateful: Ada state, terdapat data yang diatur dalam component
 
 ### 2. Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing
 
