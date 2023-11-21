@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
         backgroundColor: Colors.teal,
+        foregroundColor: Colors.white,
         shadowColor: Colors.transparent,
       ),
       drawer: const LeftDrawer(),
