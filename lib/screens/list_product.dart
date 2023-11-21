@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:inventory_tracker/models/product.dart';
+import 'package:inventory_tracker/screens/item_detail.dart';
 
 import 'package:inventory_tracker/widgets/left_drawer.dart';
 
@@ -78,24 +79,35 @@ class _ItemListPageState extends State<ItemListPage> {
                                 ),
                               ],
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "${snapshot.data![index].fields.name}",
-                                  style: const TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ItemDetailPage(
+                                        item: snapshot.data![index]),
                                   ),
-                                ),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "Amount: ${snapshot.data![index].fields.amount}"),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "${snapshot.data![index].fields.description}")
-                              ],
+                                );
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${snapshot.data![index].fields.name}",
+                                    style: const TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                      "Amount: ${snapshot.data![index].fields.amount}"),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                      "${snapshot.data![index].fields.description}")
+                                ],
+                              ),
                             ),
                           ));
                 }
